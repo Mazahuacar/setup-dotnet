@@ -34,3 +34,23 @@ runs:
   main: 'dist/setup/index.js'
   post: 'dist/cache-save/index.js'
   post-if: success()
+            - nombre: Configurar el SDK de .NET Core
+  usos: acciones/setup-dotnet@v4.0.1
+  con:
+    # Versiones opcionales del SDK que se utilizarán. Si no se proporciona, se instalará la versión global.json cuando esté disponible. Ejemplos: 2.2.104, 3.1, 3.1.x, 3.x, 6.0.2xx
+    dotnet-version: # opcional
+    # Calidad opcional de la compilación. Los valores posibles son: diario, firmado, validado, vista previa, ga.
+    dotnet-quality: # opcional
+    # Ubicación opcional de global.json, si su global.json no se encuentra en la raíz del repositorio.
+    archivo global-json: # opcional
+    # Fuente de paquete opcional para la cual se configurará la autenticación. Consultará cualquier NuGet.config existente en la raíz del repositorio y proporcionará un NuGet.config temporal utilizando la variable de entorno NUGET_AUTH_TOKEN como ClearTextPassword
+    URL de origen: # opcional
+    # PROPIETARIO opcional para usar paquetes de organizaciones o usuarios del Registro de paquetes de GitHub que no sean el propietario del repositorio actual. Solo se usa si también se proporciona una URL de GPR en la URL de origen
+    propietario: # opcional
+    # Ubicación opcional de NuGet.config, si su NuGet.config no se encuentra en la raíz del repositorio.
+    archivo de configuración: # opcional
+    # Entrada opcional para habilitar el almacenamiento en caché de la carpeta de paquetes globales de NuGet
+    caché: # opcional
+    # Se utiliza para especificar la ruta a un archivo de dependencia: packages.lock.json. Admite caracteres comodín o una lista de nombres de archivos para almacenar en caché varias dependencias.
+    ruta de dependencia de caché: # opcional
+          
